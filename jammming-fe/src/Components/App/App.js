@@ -3,23 +3,42 @@ import React from 'react';
 import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
-import PlayList from '..PlayList';
+import Playlist from '../Playlist/Playlist';
 
 
 class App extends React.Component {
   constructor(props){
-  super(props);
-  this.state = {
-    SearchResults: [],
-    playlistName: 'My playlist',
-    playlistTracks: []
-  };
+    super(props);
+    this.state = {
+      searchResults: [{
+        'id': 1,
+        'name': 'wonderwall',
+        'artist': 'oasis',
+        'album': 'what\'s the story morning glory'
+      }, 
+      {
+        'id': 2,
+        'name': 'patience',
+        'artist': 'mannequin pussy',
+        'album': 'romantic'
+      },
+      {
+        'id': 3,
+        'name': 'smells like teen spirit',
+        'artist': 'nirvana',
+        'album': 'nirvana'
+      }
+    ],
 
-this.addTracks = this.addTracks.bind(this);
-this.removeTrack = this.removeTrack.bind(this);
-this.updatePlaylistName = this.updatePlaylistName.bind(this);
-this.savePlaylist = this.savePlaylist.bind(this);
-this.search = this.search.bind(this);
+      playlistName: 'My playlist',
+      playlistTracks: []
+    };
+
+    // this.addTracks = this.addTracks.bind(this);
+    // this.removeTrack = this.removeTrack.bind(this);
+    // this.updatePlaylistName = this.updatePlaylistName.bind(this);
+    // this.savePlaylist = this.savePlaylist.bind(this);
+    // this.search = this.search.bind(this);
 }
 
   render() {
@@ -30,8 +49,8 @@ this.search = this.search.bind(this);
           <SearchBar />
 
             <div className="App-playlist">
-                <SearchResults />
-                <PlayList />
+                <SearchResults searchResults={this.state.searchResults} />
+                <Playlist />
             </div>
         </div>
     </div>

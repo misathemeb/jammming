@@ -4,6 +4,8 @@ import './App.css';
 import SearchBar from '../SearchBar/SearchBar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
+import Spotify, {accessToken} from '../../util/Spotify';
+
 
 
 class App extends React.Component {
@@ -59,6 +61,12 @@ class App extends React.Component {
     this.search = this.search.bind(this);
 }
 
+  componentDidMount(){
+     Spotify.getAccessToken();
+  }
+
+
+
   addTrack(track){
     let tracks = this.state.playlistTracks;
     if (tracks.find(savedTrack => savedTrack.id === track.id)) {
@@ -92,7 +100,10 @@ class App extends React.Component {
     this.setState({
       searchTerm: term
     })
-    console.log(term);
+    
+    Spotify.search(this.state.searchTerm);
+    
+    console.log(Spotify.search(this.state.searchTerm));
   }
 
   render() {

@@ -1,21 +1,21 @@
 
 import React from 'react';
 import './Track.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlus} from '@fortawesome/free-solid-svg-icons';
+import { faCircleMinus} from '@fortawesome/free-solid-svg-icons';
 
 class Track extends React.Component {
     constructor(props){
         super(props);
         this.addTrack = this.addTrack.bind(this);
         this.removeTrack = this.removeTrack.bind(this);
-
     }
 
     addTrack(){
         this.props.onAdd(this.props.track)
     }
    
-
     removeTrack(){
         this.props.onRemove(this.props.track)
     }
@@ -27,11 +27,13 @@ class Track extends React.Component {
                     <h3>{this.props.track.name}</h3>
                     <p>{this.props.track.artist} | {this.props.track.album}</p>
                 </div>
-                <button className="Track-action" onClick={this.addTrack} >+</button>
-                <button className="Track-action" onClick={this.removeTrack}>-</button>
+                {this.props.isRemoval &&  <button className="Track-action" onClick={this.removeTrack}><FontAwesomeIcon icon={faCircleMinus} /></button> }
+
+                {!this.props.isRemoval && <button className="Track-action" onClick={this.addTrack} ><FontAwesomeIcon icon={faCirclePlus} /></button>}
+                
+               
             </div>
-    )
-  }
+    )}
 }
 
 export default Track;

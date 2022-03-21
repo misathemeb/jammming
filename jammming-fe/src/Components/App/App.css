@@ -12,18 +12,20 @@ h1 {
   padding: .77rem 0;
   background-color: #010c3f;
   text-align: center;
-  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  font-family: 'Gothic', sans-serif;
   font-size: 1.88rem;
   color: #fff;
 }
 
 h1 .highlight {
-  color: #6c41ec;
+  color: #6b4ace;
 }
 
 h2 {
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 1.55rem;
+  text-transform: uppercase;
 }
 
 .App {
@@ -33,11 +35,17 @@ h2 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  font-family: 'Work Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 500;
   color: #fff;
 }
 
+#input {
+  border-radius: 20px;
+  border-color: #010c3f;
+  border-width: 4px;
+
+}
 .App-playlist {
   display: flex;
   justify-content: space-between;

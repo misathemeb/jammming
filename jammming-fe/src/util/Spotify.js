@@ -2,7 +2,7 @@
 // need a clientID and redirectURI
 
 const clientID = '583c94ecbb034584a24901479f3c6194';
-const redirectURI = encodeURIComponent("http://localhost:3000/") //or surge deployment url?
+const redirectURI = encodeURIComponent("https://api.render.com/deploy/srv-c9l9mp441ls49b95til0?key=5kNVfhaupuM") //or deployment url?
 // const spotifyUrl = `https://accounts.spotify.com/authorize?response_type=token&scope=playlist-modify-public&client_id=${clientID}&redirect_uri=${redirectURI}`;
 
 const localStorageKey = "accessToken";
